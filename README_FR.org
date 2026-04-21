@@ -1,83 +1,50 @@
 #+TITLE: Profil - Hadrien KLOTZ (Alexandre Luedo)
 
-[[./README.org][🇬🇧 Version Anglaise]]
+[[./README.org][Version Anglaise]]
 
-*Bonjour, je suis Hadrien KLOTZ, connu ici sous le nom d'Alexandre Luedo.*
+* Introduction
+Bonjour, je suis Hadrien KLOTZ. Actuellement chocolatier-confiseur, je me prépare à devenir ingénieur infrastructure. Je privilégie l'administration Bare Metal pour maîtriser les couches basses du système avant de passer aux hyperviseurs.
 
-Actuellement chocolatier-confiseur, je me prépare à devenir ingénieur infrastructure.
-
-#+begin_quote
-[!NOTE]
-Je me concentre actuellement sur l'administration "Bare Metal" (matériel physique) pour comprendre en profondeur les systèmes avant de passer à la virtualisation sous Proxmox.
-#+end_quote
-
-* 🏗️ Infrastructure personnelle (Home Lab)
-Gestion d'un parc de serveurs Dell PowerEdge (36 Cores / 128 Go RAM) entièrement automatisé via Ansible.
+* Infrastructure (Home Lab)
+Parc de 36 Cores / 128 Go RAM entièrement automatisé via Ansible.
 
 #+begin_src mermaid
 graph TD
-    User((Utilisateur)) --> Router[Routeur VPN/Wireguard]
-    Router --> Switch[Switch Non-Managé /22]
+    User((Utilisateur)) --> Router[Routeur VPN]
+    Router --> Switch[Switch /22]
     
-    subgraph "Dell PowerEdge T630 (Couche Services)"
-        DNS[Serveur DNS - Bind]
-        PKI[Infrastructure PKI - 2 CA]
-        LB[Load Balancer - Nginx]
+    subgraph "Dell T630 (Services)"
+        DNS[DNS - Bind]
+        PKI[PKI - 2 CA]
+        LB[LB - Nginx]
     end
     
-    subgraph "Dell PowerEdge T330 (Couche Stockage)"
-        NFS[Serveur NFS]
-        Backup[NAS / Sauvegardes]
+    subgraph "Dell T330 (Stockage)"
+        NFS[NFS]
+        Backup[NAS]
     end
     
-    Ansible[Poste Admin - Ansible] -.-> |IaC| T630
+    Ansible[Admin] -.-> |IaC| T630
     Ansible -.-> |IaC| T330
 #+end_src
 
-* Mes projets
-- [[https://github.com/AlexandreLuedo/INFRA][INFRA]] - Organisation et architecture de mon infrastructure personnelle.
-- [[https://github.com/AlexandreLuedo/Ansible][Ansible]] - Déploiement automatisé de configurations et de serveurs. Plus de 300 commits de gestion de configuration.
-- [[https://github.com/AlexandreLuedo/DOCU][DOCU]] - Base de connaissances technique (Org-mode) : Linux, Cryptographie, Docker, K8S, Dart, Flutter.
-- [[https://github.com/AlexandreLuedo/Ganache.lab][Ganache.lab]] - Application Flutter de calcul scientifique pour la chocolaterie (Architecture Riverpod).
-- [[https://github.com/AlexandreLuedo/Converter.lab][Converter.lab]] - Calculateur de moules et cadres en chocolat suivant le Material Design 3 de Google.
+* Projets
+- [[https://github.com/AlexandreLuedo/Ansible][Ansible IaC]] : Automatisation complète (300+ commits).
+- [[https://github.com/AlexandreLuedo/DOCU][DOCU]] : Base de connaissances (Org-mode) sur Linux, Crypto et K8S.
+- [[https://github.com/AlexandreLuedo/Ganache.lab][Ganache.lab]] & [[https://github.com/AlexandreLuedo/Converter.lab][Converter.lab]] : Applications scientifiques (Flutter) pour la chocolaterie.
 
 * Stack Technique
-** Systèmes d'exploitation
-*** Debian
-**** Serveur
-Utilisé pour l'ensemble de mon infrastructure. Choix délibéré de l'installation "from scratch" pour maîtriser les couches basses.
-**** Desktop
-Utilisation quotidienne. Ma seconde distribution après Ubuntu (ma première installation Linux).
+- OS : Debian (Server/Desktop), Arch Linux.
+- Ops : Ansible (SSOT), Docker, Git, Proxmox (WIP).
+- Dev : Dart, Flutter, Python.
+- Outils : Doom Emacs (Org-mode), Neovim, Clavier US ANSI.
 
-** Opérations & Infrastructure as Code (IaC)
-*** Ansible
-Utilisation depuis septembre 2025. Développement de plusieurs rôles et playbooks. Utilisation de mon [[https://github.com/AlexandreLuedo/Ansible/blob/master/INVENTORIES/Inventory.yaml][inventaire initial]] comme "Source Unique de Vérité" (SSOT).
-*** Docker
-Déploiement de services conteneurisés (Nextcloud, etc.) depuis fin 2024. Transition d'une installation AIO vers des Dockerfiles personnalisés pour une maîtrise totale de la configuration.
-*** Git
-Utilisé systématiquement pour le versioning de l'infrastructure et des applications Flutter.
-*** K8S (Kubernetes)
-Notions de base documentées. Étape majeure de ma roadmap d'apprentissage future.
-
-** Développement
-*** Flutter & Dart
-- Algorithmes de base et syntaxe.
-- Gestion d'état (Provider, Riverpod).
-
-*** Outils de travail (Workflow)
-- [[https://github.com/doomemacs/doomemacs][Doom Emacs]] ([[https://orgmode.org/][Org-mode]])
-- Neovim (configuration personnalisée) & LazyVim
-- Shell: Bash, Zsh
-- Clavier en disposition US ANSI
-
-** Roadmap (Objectifs)
-- [X] Automatisation DNS / NTP / NFS / PKI complète (2 Autorités de Certification)
+* Roadmap (Objectifs)
+- [X] DNS / NTP / NFS / PKI complète
 - [ ] Haute Disponibilité (VIP / Loadbalancing)
-- [ ] Stack de Monitoring (Prometheus/Grafana)
-- [ ] Déploiement d'un Cluster Kubernetes "Vanilla"
+- [ ] Stack de Monitoring
+- [ ] Déploiement Cluster K8S
 
-** Conventions de Nommage
-Utilisation des MAJUSCULES pour les /DOSSIERS/ et du snake_case pour les /fichiers/.
-
-** Mon approche des LLM
-Je m'intéresse de près aux modèles locaux auto-hébergés (famille Gemma). Je les utilise non pas pour générer du code, mais pour apprendre et adopter des pratiques professionnelles. Ils m'aident également pour la traduction technique contextuelle.
+* Conventions & Méthode
+- Nommage : MAJUSCULES pour les dossiers, snake_case pour les fichiers.
+- Approche LLM : Utilisation pour l'adoption de bonnes pratiques et la traduction technique.
