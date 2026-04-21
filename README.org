@@ -1,0 +1,88 @@
+#+TITLE: Profile - Hadrien KLOTZ (Alexandre Luedo)
+
+[[./README_FR.org][🇫🇷 Version Française]]
+
+*Hey, I'm Hadrien KLOTZ, known as Alexandre Luedo here.*
+
+Currently a chocolate maker, tomorrow an infrastructure engineer.
+
+#+begin_quote
+[!NOTE]
+I am currently focusing on Bare Metal administration to fully understand different systems before moving on to hypervisors like Proxmox.
+#+end_quote
+
+* 🏗️ Infrastructure & Home Lab
+Managing a fleet of **Dell PowerEdge** servers (36 Cores / 128GB RAM) fully automated via Ansible.
+
+#+begin_src mermaid
+graph TD
+    User((User)) --> Router[VPN/Wireguard Router]
+    Router --> Switch[Non-Managed Switch /22]
+    
+    subgraph "Dell PowerEdge T630 (Services Layer)"
+        DNS[DNS Server - Bind]
+        PKI[PKI Infrastructure - 2 Root CAs]
+        LB[Load Balancer - Nginx]
+    end
+    
+    subgraph "Dell PowerEdge T330 (Storage Layer)"
+        NFS[NFS Server]
+        Backup[NAS / Backups]
+    end
+    
+    Ansible[Admin Station - Ansible] -.-> |IaC| T630
+    Ansible -.-> |IaC| T330
+#+end_src
+
+* My projects
+- [[https://github.com/AlexandreLuedo/INFRA][INFRA]] - An overview of my infrastructure organization.
+- [[https://github.com/AlexandreLuedo/Ansible][Ansible]] - Using Ansible to deploy configs & servers. Includes roles and playbooks.
+  Over 300 commits of configuration management.
+- [[https://github.com/AlexandreLuedo/DOCU][DOCU]] - My documentation hub, using Doom Emacs for note-taking and Ansible development.
+  Covering: Linux, Cryptography, Docker, K8S, Dart, Flutter.
+- [[https://github.com/AlexandreLuedo/Ganache.lab][Ganache.lab]] - The first ganache formulator working natively on all platforms.
+  Used to learn Flutter and algorithms; contains some experimental "spaghetti" code for now.
+- [[https://github.com/AlexandreLuedo/Converter.lab][Converter.lab]] - A mold and chocolate frame calculator following Google's Material Design 3.
+  A smaller, cleaner Flutter project aiming to complement Ganache.lab in the future.
+
+* Technical stack
+** Operating systems
+*** Debian
+**** Server
+Used for my entire infrastructure. I avoid using Proxmox for now to build everything myself from the ground up.
+**** Desktop
+My current daily driver. It was my second distro after Ubuntu (my first Linux installation).
+
+** Operations & Infra as Code
+*** Ansible
+Started using Ansible in September 2025. I have written several roles & playbooks, using my [[https://github.com/AlexandreLuedo/Ansible/blob/master/INVENTORIES/Inventory.yaml][initial inventory]] as a Single Source of Truth (SSOT).
+*** Docker
+Started using Docker in late 2024 for a Nextcloud instance on my first NAS. I initially used the AIO version but later created my own Dockerfile for a custom setup. After a system failure where I lost un-versioned configs, I now use Git for everything.
+*** Git
+Started using Git for Ansible configurations, then expanded its use to Ganache.lab and other repositories.
+*** K8S 
+Not currently in use, but I have documented the basics. It is a key part of my future infrastructure journey.
+
+** Development
+*** Flutter & Dart
+- Basic algorithms and syntax.
+- State management (Provider, Riverpod).
+
+*** Workflow tools
+- [[https://github.com/doomemacs/doomemacs][Doom Emacs]] ([[https://orgmode.org/][Org-mode]])
+- Neovim (custom config) & LazyVim
+- Shell: Bash, Zsh
+- US ANSI keyboard layout
+
+** Roadmap
+- [X] DNS / NTP / NFS / Full PKI (2 Root CAs)
+- [ ] High Availability (VIP / Loadbalancing)
+- [ ] Monitoring Stack (Prometheus/Grafana)
+- [ ] Vanilla K8S Cluster Deployment
+
+** Naming Conventions
+Using UPPERCASE for /FOLDERS/ and snake_case for /my_files/.
+
+** My LLM Approach
+I am very interested in current LLMs, particularly small self-hosted models like the Gemma family. I use them not to write code for me, but to learn and adopt professional best practices.
+I often use them to translate highly contextual text or documentation, specifically from English to French.
