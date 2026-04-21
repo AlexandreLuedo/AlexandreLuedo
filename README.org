@@ -1,5 +1,3 @@
-#+TITLE: Profile - Hadrien KLOTZ (Alexandre Luedo)
-
 [[./README_FR.org][ 🇫🇷 Version Française]]
 
 * Introduction
