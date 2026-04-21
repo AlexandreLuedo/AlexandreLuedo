@@ -1,6 +1,6 @@
 #+TITLE: Profil - Hadrien KLOTZ (Alexandre Luedo)
 
-[[./README.org][Version Anglaise]]
+[[./README.org][ 🇬🇧 Version Anglaise]]
 
 * Introduction
 Bonjour, je suis Hadrien KLOTZ. Actuellement chocolatier-confiseur, je me prépare à devenir ingénieur infrastructure. Je privilégie l'administration Bare Metal pour maîtriser les couches basses du système avant de passer aux hyperviseurs.
