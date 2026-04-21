@@ -1,6 +1,6 @@
 #+TITLE: Profile - Hadrien KLOTZ (Alexandre Luedo)
 
-[[./README_FR.org][Version Française]]
+[[./README_FR.org][ 🇫🇷 Version Française]]
 
 * Introduction
 Hey, I'm Hadrien KLOTZ. Currently a chocolate maker, tomorrow an infrastructure engineer. I focus on Bare Metal administration to master system internals before moving to hypervisors.
