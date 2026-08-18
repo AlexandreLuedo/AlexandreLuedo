@@ -2,8 +2,9 @@
 
 * WARNING
 *I MOVE TO GITLAB*
+
 All my new repository are storred [[https://gitlab.com/AlexandreLuedo][here]] !
-This account is just here to follow projects and but it keep mirroring old repositories, but the NEW ONES WILL DON'T HERE => go on Gitlab to finding my new repos. 
+This account is just here to follow projects but I keep mirroring old repositories. The *NEW ONES ARE ON GITLAB*. 
 
 * Introduction
 Hey, I'm Hadrien KLOTZ. Currently a chocolate maker, tomorrow an infrastructure engineer. I focus on Bare Metal administration to master system internals before moving to hypervisors.
