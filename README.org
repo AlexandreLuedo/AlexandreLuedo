@@ -1,5 +1,10 @@
 [[./README_FR.org][ 🇫🇷 Version Française]]
 
+* WARNING
+*I MOVE TO GITLAB*
+All my new repository are storred [[https://gitlab.com/AlexandreLuedo][here]] !
+This account is just here to follow projects and but it keep mirroring old repositories, but the NEW ONES WILL DON'T HERE => go on Gitlab to finding my new repos. 
+
 * Introduction
 Hey, I'm Hadrien KLOTZ. Currently a chocolate maker, tomorrow an infrastructure engineer. I focus on Bare Metal administration to master system internals before moving to hypervisors.
 
