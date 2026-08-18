@@ -1,6 +1,13 @@
 
 [[./README.org][ 🇬🇧 Version Anglaise]]
 
+* ATTENTION
+*JE SUIS SUR GITLAB MAINTENANT*
+
+Tous mes nouveaux dépôts de code sont stockés [[https://gitlab.com/AlexandreLuedo][ici]] !
+
+Ce compte GitHub est maintenu uniquement pour suivre des projets et renseigner des issues. Tous mes projets actuels sont automatiquement mirrorés de GitLab à GitHub. Cependant, *tous les nouveaux projets sont à retrouver sur GitLab (voir le lien "ici").
+
 * Introduction
 Bonjour, je suis Hadrien KLOTZ. Actuellement chocolatier-confiseur, je me prépare à devenir ingénieur infrastructure. Je privilégie l'administration Bare Metal pour maîtriser les couches basses du système avant de passer aux hyperviseurs.
 
